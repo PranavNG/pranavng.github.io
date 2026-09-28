@@ -570,15 +570,30 @@ svg {
   box-shadow: 0 12px 35px hsla(0, 0%, 0%, .18);
 }
 
-.projects__image-wrapper {
-  width: 100%;
-  height: 210px;
+.projects__image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
 
-  overflow: hidden;
+  padding: .75rem;
 
   background-color: var(--body-color);
 
   border-bottom: 1px solid var(--border-color);
+}
+
+.projects__image-grid .projects__image {
+  width: 100%;
+
+  border-radius: .5rem;
+
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .projects__image-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .projects__image {
