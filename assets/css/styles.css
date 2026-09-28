@@ -883,6 +883,30 @@ textarea {
   color: var(--first-color);
 }
 
+.projects__more {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.projects__more p {
+  margin-bottom: .5rem;
+  color: var(--text-color);
+}
+
+.projects__more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+
+  transition: color .2s ease;
+}
+
+.projects__more-link:hover {
+  color: var(--title-color);
+}
 
 /*=============== CONTACT ===============*/
 .contact__container {
