@@ -963,22 +963,16 @@ textarea {
 
 .projects__preview-grid {
   display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  gap: .75rem;
+  grid-template-columns: 1fr;
+  gap: .85rem;
 }
-
 
 .projects__preview-grid img {
   width: 100%;
-
-  height: 280px;
-
+  aspect-ratio: 16 / 9;
+  height: auto;
   object-fit: cover;
-
   border: 1px solid var(--border-color);
-
   border-radius: .75rem;
 }
 
