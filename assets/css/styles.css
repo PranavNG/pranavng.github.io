@@ -94,8 +94,9 @@ svg {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
+  width: calc(100% - 3rem);
+  max-width: 1400px;
+  margin-inline: auto;
 }
 .grid {
   display: grid;
