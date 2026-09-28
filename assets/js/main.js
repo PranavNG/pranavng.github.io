@@ -262,7 +262,382 @@ if (footerYear) {
       new Date().getFullYear();
 
 }
+/*=============== PROJECTS ===============*/
 
+const projects = [
+
+   {
+      number: "01",
+
+      shortTitle: "Species Distribution",
+
+      title: "Species Distribution Modelling",
+
+      category: "UNSW Academic Project · Data Science",
+
+      status: "",
+
+      descriptions: [
+         "A UNSW group project investigating species distribution using environmental and spatial predictors.",
+
+         "My contribution focused on exploratory data analysis and Regularised Logistic Regression, including model tuning, class balancing and cross-validation."
+      ],
+
+      tags: [
+         "Python",
+         "Pandas",
+         "Scikit-learn",
+         "Logistic Regression",
+         "Optuna"
+      ],
+
+      github:
+         "https://github.com/PranavNG/species-distribution-model",
+
+      images: [
+         {
+            src: "assets/img/species-feature-correlation.png",
+            alt: "Species Distribution feature correlation heatmap"
+         },
+         {
+            src: "assets/img/species-model-comparison.png",
+            alt: "Species Distribution model comparison results"
+         }
+      ]
+   },
+
+
+   {
+      number: "02",
+
+      shortTitle: "F1 Data Platform",
+
+      title: "F1 Data Platform",
+
+      category: "Data Engineering",
+
+      status: "In Progress",
+
+      descriptions: [
+         "An end-to-end Formula 1 data platform for collecting, transforming, modelling and analysing racing data across seasons, races, drivers, teams and lap-level performance."
+      ],
+
+      tags: [
+         "Python",
+         "PostgreSQL",
+         "dbt",
+         "Airflow",
+         "Tableau"
+      ],
+
+      github:
+         "https://github.com/PranavNG/f1-data-platform",
+
+      images: [
+         {
+            src: "assets/img/Arch_diagram.png",
+            alt: "F1 Data Platform architecture"
+         }
+      ]
+   },
+
+
+   {
+      number: "03",
+
+      shortTitle: "Beer Portfolio Analytics",
+
+      title: "Beer Portfolio Analytics",
+
+      category: "Business Intelligence · Data Modelling",
+
+      status: "",
+
+      descriptions: [
+         "A Power BI solution for analysing product portfolio performance across revenue, profitability, customers, channels, regions and individual products.",
+
+         "My primary contribution was designing the analytical data model and developing the final interactive dashboard."
+      ],
+
+      tags: [
+         "Power BI",
+         "Data Modelling",
+         "DAX",
+         "Business Analytics"
+      ],
+
+      github:
+         "https://github.com/PranavNG/beer-portfolio-analytics",
+
+      images: [
+         {
+            src: "assets/img/beer-data-model.png",
+            alt: "Beer Portfolio Power BI data model"
+         },
+         {
+            src: "assets/img/beer-dashboard-overview.png",
+            alt: "Beer Portfolio dashboard overview"
+         }
+      ]
+   }
+
+];
+
+
+const projectsSelector =
+   document.getElementById("projects-selector");
+
+const projectsDetail =
+   document.getElementById("projects-detail");
+
+
+const createProjectTabs = () => {
+
+   if (!projectsSelector) {
+      return;
+   }
+
+
+   projectsSelector.innerHTML =
+      projects.map((project, index) => {
+
+         return `
+            <button
+               class="projects__tab ${index === 0 ? "active-project" : ""}"
+               type="button"
+               data-project="${index}"
+               role="tab"
+               aria-selected="${index === 0}"
+            >
+               <span class="projects__tab-number">
+                  ${project.number}
+               </span>
+
+               <span class="projects__tab-title">
+                  ${project.shortTitle}
+               </span>
+            </button>
+         `;
+
+      }).join("");
+
+};
+
+
+const createProjectImages = project => {
+
+   if (!project.images || project.images.length === 0) {
+      return "";
+   }
+
+
+   if (project.images.length === 1) {
+
+      return `
+         <div class="projects__preview-single">
+
+            <img
+               src="${project.images[0].src}"
+               alt="${project.images[0].alt}"
+            >
+
+         </div>
+      `;
+
+   }
+
+
+   return `
+      <div class="projects__preview-grid">
+
+         ${project.images.map(image => {
+
+            return `
+               <img
+                  src="${image.src}"
+                  alt="${image.alt}"
+               >
+            `;
+
+         }).join("")}
+
+      </div>
+   `;
+
+};
+
+
+const showProject = index => {
+
+   if (!projectsDetail) {
+      return;
+   }
+
+
+   const project = projects[index];
+
+
+   if (!project) {
+      return;
+   }
+
+
+   const statusHTML =
+      project.status
+         ? `
+            <span class="projects__status">
+               ${project.status}
+            </span>
+         `
+         : "";
+
+
+   const descriptionsHTML =
+      project.descriptions.map(description => {
+
+         return `
+            <p class="projects__description">
+               ${description}
+            </p>
+         `;
+
+      }).join("");
+
+
+   const tagsHTML =
+      project.tags.map(tag => {
+
+         return `<span>${tag}</span>`;
+
+      }).join("");
+
+
+   projectsDetail.innerHTML = `
+
+      <div class="projects__detail-grid">
+
+         <div class="projects__detail-content">
+
+            <p class="projects__category">
+               ${project.category}
+            </p>
+
+
+            <div class="projects__heading">
+
+               <span class="projects__detail-number">
+                  ${project.number}
+               </span>
+
+               <h3 class="projects__detail-title">
+                  ${project.title}
+               </h3>
+
+               ${statusHTML}
+
+            </div>
+
+
+            ${descriptionsHTML}
+
+
+            <div class="projects__tags">
+               ${tagsHTML}
+            </div>
+
+
+            <div class="projects__links">
+
+               <a
+                  href="${project.github}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="projects__link"
+               >
+                  GitHub
+
+                  <i class="ri-arrow-right-up-line"></i>
+               </a>
+
+            </div>
+
+         </div>
+
+
+         <div class="projects__preview">
+
+            ${createProjectImages(project)}
+
+         </div>
+
+      </div>
+
+   `;
+
+};
+
+
+const setActiveProject = index => {
+
+   const projectTabs =
+      document.querySelectorAll(".projects__tab");
+
+
+   projectTabs.forEach((tab, tabIndex) => {
+
+      const isActive =
+         tabIndex === index;
+
+
+      tab.classList.toggle(
+         "active-project",
+         isActive
+      );
+
+
+      tab.setAttribute(
+         "aria-selected",
+         isActive
+      );
+
+   });
+
+
+   showProject(index);
+
+};
+
+
+createProjectTabs();
+
+showProject(0);
+
+
+if (projectsSelector) {
+
+   projectsSelector.addEventListener(
+      "click",
+      event => {
+
+         const tab =
+            event.target.closest(".projects__tab");
+
+
+         if (!tab) {
+            return;
+         }
+
+
+         const index =
+            Number(tab.dataset.project);
+
+
+         setActiveProject(index);
+
+      }
+   );
+
+}
 
 /*=============== SCROLL REVEAL ===============*/
 
@@ -305,7 +680,7 @@ if (typeof ScrollReveal !== "undefined") {
 
 
    sr.reveal(
-      ".skills__card, .projects__card",
+      ".skills__card, .projects__shell",
       {
          interval: 100
       }
