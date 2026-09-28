@@ -940,5 +940,199 @@ svg {
   .projects__container {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+/* ==================================================
+   FINAL LAYOUT & SPACING FIXES
+================================================== */
+
+/* 1. Keep all sections centred with equal left/right space */
+.container {
+  width: calc(100% - 3rem);
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+
+/* 2. Better vertical spacing below navbar / between sections */
+.section {
+  padding-block: 5rem 3rem;
+  scroll-margin-top: 5rem;
+}
+
+/* About currently has too much empty space at the top */
+.about {
+  padding-top: 4rem;
+}
+
+.about__container {
+  align-items: center;
+  column-gap: 4rem;
+}
+
+.about__content .section__title {
+  margin-bottom: 2rem;
+}
+
+.about__description {
+  margin-bottom: 1.2rem;
+}
+
+
+/* 3. PROJECT GRID — make all three cards equal */
+.projects__container {
+  width: 100%;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  align-items: stretch;
+
+  gap: 1.5rem;
+}
+
+.projects__card {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ==========================================
+   PROJECT IMAGE FIX
+========================================== */
+
+/* All project preview areas get the same height */
+.projects__image-wrapper,
+.projects__image-grid {
+  width: 100%;
+  height: 220px;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+
+/* F1 architecture preview */
+.projects__image-wrapper {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: .75rem;
+
+  background: #fff;
+}
+
+.projects__image-wrapper .projects__image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* Species + Beer: two images beside each other */
+.projects__image-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: .6rem;
+
+  padding: .75rem;
+
+  background-color: var(--body-color);
+}
+
+.projects__image-grid .projects__image {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  object-fit: cover;
+
+  border-radius: .4rem;
+}
+
+
+/* Keep text alignment consistent between all cards */
+.projects__content {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 1.75rem;
+}
+
+.projects__top {
+  margin-bottom: 1rem;
+}
+
+.projects__description {
+  margin-bottom: .9rem;
+}
+
+/* Push tags and GitHub button toward bottom */
+.projects__tags {
+  margin-top: auto;
+}
+
+.projects__links {
+  margin-top: 1.25rem;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media screen and (max-width: 1023px) {
+
+  .projects__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media screen and (max-width: 767px) {
+
+  .container {
+    width: calc(100% - 2rem);
+  }
+
+  .section {
+    padding-block: 4rem 2.5rem;
+  }
+
+  .about {
+    padding-top: 3.5rem;
+  }
+
+  .projects__container {
+    grid-template-columns: 1fr;
+  }
+
+  .projects__image-wrapper {
+    height: 280px;
+  }
+
+  .projects__image-grid {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .projects__image-grid .projects__image {
+    height: 190px;
+  }
 
 }
