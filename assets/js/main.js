@@ -17,64 +17,46 @@ const sections = document.querySelectorAll("section[id]");
 /*=============== MOBILE MENU ===============*/
 
 const openMenu = () => {
-
    if (!navMenu) {
       return;
    }
 
    navMenu.classList.add("show-menu");
-
    document.body.classList.add("menu-open");
-
 };
 
 
 const closeMenu = () => {
-
    if (!navMenu) {
       return;
    }
 
    navMenu.classList.remove("show-menu");
-
    document.body.classList.remove("menu-open");
-
 };
 
 
 if (navToggle) {
-
    navToggle.addEventListener("click", openMenu);
-
 }
 
 
 if (navClose) {
-
    navClose.addEventListener("click", closeMenu);
-
 }
 
 
 /* Close mobile menu after selecting navigation item */
 navLinks.forEach(link => {
-
    link.addEventListener("click", () => {
-
       closeMenu();
 
-      /*
-         Immediately make the clicked link active.
-         Scroll logic will take over afterwards.
-      */
       navLinks.forEach(item => {
          item.classList.remove("active-link");
       });
 
       link.classList.add("active-link");
-
    });
-
 });
 
 
@@ -83,108 +65,73 @@ navLinks.forEach(link => {
    while the menu is open, reset the mobile menu.
 */
 window.addEventListener("resize", () => {
-
    if (window.innerWidth >= 768) {
-
       closeMenu();
-
    }
-
 });
 
 
 /*=============== HEADER BACKGROUND ===============*/
 
 const updateHeader = () => {
-
    if (!header) {
       return;
    }
 
    if (window.scrollY >= 40) {
-
       header.classList.add("blur-header");
-
    } else {
-
       header.classList.remove("blur-header");
-
    }
-
 };
 
 
 /*=============== SCROLL UP BUTTON ===============*/
 
 const updateScrollUp = () => {
-
    if (!scrollUpButton) {
       return;
    }
 
    if (window.scrollY >= 350) {
-
       scrollUpButton.classList.add("show-scroll");
-
    } else {
-
       scrollUpButton.classList.remove("show-scroll");
-
    }
-
 };
 
 
 /*=============== ACTIVE NAV LINK ===============*/
 
 const updateActiveLink = () => {
-
    if (!sections.length) {
       return;
    }
 
-
-   /*
-      Use a point about 35% down the screen.
-      This gives more natural section highlighting.
-   */
    const marker =
       window.scrollY +
       window.innerHeight * 0.35;
-
 
    let currentSection = "home";
 
 
    sections.forEach(section => {
-
       const sectionTop = section.offsetTop;
 
       const sectionBottom =
          sectionTop +
          section.offsetHeight;
 
-
       if (
          marker >= sectionTop &&
          marker < sectionBottom
       ) {
-
          currentSection =
             section.getAttribute("id");
-
       }
-
    });
 
 
-   /*
-      Contact is the final section.
-
-      Browsers often cannot scroll far enough
-      for its top to reach the normal marker,
-      so force Contact active at the page bottom.
-   */
    const atBottom =
       Math.ceil(
          window.innerHeight +
@@ -195,46 +142,32 @@ const updateActiveLink = () => {
 
 
    if (atBottom) {
-
       currentSection = "contact";
-
    }
 
 
    navLinks.forEach(link => {
-
       const linkTarget =
          link.getAttribute("href");
-
 
       if (
          linkTarget ===
          `#${currentSection}`
       ) {
-
          link.classList.add("active-link");
-
       } else {
-
          link.classList.remove("active-link");
-
       }
-
    });
-
 };
 
 
 /*=============== MAIN SCROLL HANDLER ===============*/
 
 const handleScroll = () => {
-
    updateHeader();
-
    updateScrollUp();
-
    updateActiveLink();
-
 };
 
 
@@ -257,11 +190,11 @@ window.addEventListener(
 /*=============== FOOTER YEAR ===============*/
 
 if (footerYear) {
-
    footerYear.textContent =
       new Date().getFullYear();
-
 }
+
+
 /*=============== PROJECTS ===============*/
 
 const projects = [
@@ -292,18 +225,7 @@ const projects = [
       ],
 
       github:
-         "https://github.com/PranavNG/species-distribution-model",
-
-      images: [
-         {
-            src: "assets/img/species-feature-correlation.png",
-            alt: "Species Distribution feature correlation heatmap"
-         },
-         {
-            src: "assets/img/species-model-comparison.png",
-            alt: "Species Distribution model comparison results"
-         }
-      ]
+         "https://github.com/PranavNG/species-distribution-model"
    },
 
 
@@ -331,14 +253,7 @@ const projects = [
       ],
 
       github:
-         "https://github.com/PranavNG/f1-data-platform",
-
-      images: [
-         {
-            src: "assets/img/Arch_diagram.png",
-            alt: "F1 Data Platform architecture"
-         }
-      ]
+         "https://github.com/PranavNG/f1-data-platform"
    },
 
 
@@ -367,18 +282,7 @@ const projects = [
       ],
 
       github:
-         "https://github.com/PranavNG/beer-portfolio-analytics",
-
-      images: [
-         {
-            src: "assets/img/beer-data-model.png",
-            alt: "Beer Portfolio Power BI data model"
-         },
-         {
-            src: "assets/img/beer-dashboard-overview.png",
-            alt: "Beer Portfolio dashboard overview"
-         }
-      ]
+         "https://github.com/PranavNG/beer-portfolio-analytics"
    }
 
 ];
@@ -392,15 +296,12 @@ const projectsDetail =
 
 
 const createProjectTabs = () => {
-
    if (!projectsSelector) {
       return;
    }
 
-
    projectsSelector.innerHTML =
       projects.map((project, index) => {
-
          return `
             <button
                class="projects__tab ${index === 0 ? "active-project" : ""}"
@@ -418,64 +319,16 @@ const createProjectTabs = () => {
                </span>
             </button>
          `;
-
       }).join("");
-
-};
-
-
-const createProjectImages = project => {
-
-   if (!project.images || project.images.length === 0) {
-      return "";
-   }
-
-
-   if (project.images.length === 1) {
-
-      return `
-         <div class="projects__preview-single">
-
-            <img
-               src="${project.images[0].src}"
-               alt="${project.images[0].alt}"
-            >
-
-         </div>
-      `;
-
-   }
-
-
-   return `
-      <div class="projects__preview-grid">
-
-         ${project.images.map(image => {
-
-            return `
-               <img
-                  src="${image.src}"
-                  alt="${image.alt}"
-               >
-            `;
-
-         }).join("")}
-
-      </div>
-   `;
-
 };
 
 
 const showProject = index => {
-
    if (!projectsDetail) {
       return;
    }
 
-
    const project = projects[index];
-
 
    if (!project) {
       return;
@@ -494,21 +347,17 @@ const showProject = index => {
 
    const descriptionsHTML =
       project.descriptions.map(description => {
-
          return `
             <p class="projects__description">
                ${description}
             </p>
          `;
-
       }).join("");
 
 
    const tagsHTML =
       project.tags.map(tag => {
-
          return `<span>${tag}</span>`;
-
       }).join("");
 
 
@@ -563,28 +412,18 @@ const showProject = index => {
 
          </div>
 
-
-         <div class="projects__preview">
-
-            ${createProjectImages(project)}
-
-         </div>
-
       </div>
 
    `;
-
 };
 
 
 const setActiveProject = index => {
-
    const projectTabs =
       document.querySelectorAll(".projects__tab");
 
 
    projectTabs.forEach((tab, tabIndex) => {
-
       const isActive =
          tabIndex === index;
 
@@ -599,12 +438,10 @@ const setActiveProject = index => {
          "aria-selected",
          isActive
       );
-
    });
 
 
    showProject(index);
-
 };
 
 
@@ -614,11 +451,9 @@ showProject(0);
 
 
 if (projectsSelector) {
-
    projectsSelector.addEventListener(
       "click",
       event => {
-
          const tab =
             event.target.closest(".projects__tab");
 
@@ -633,33 +468,26 @@ if (projectsSelector) {
 
 
          setActiveProject(index);
-
       }
    );
-
 }
+
 
 /*=============== SCROLL REVEAL ===============*/
 
 if (typeof ScrollReveal !== "undefined") {
 
    const sr = ScrollReveal({
-
       origin: "top",
-
       distance: "32px",
-
       duration: 750,
-
       delay: 80,
-
       reset: false
-
    });
 
 
    sr.reveal(
-      ".home__content, .section__subtitle, .section__title"
+      ".home__content, .home__capabilities, .section__subtitle, .section__title"
    );
 
 
@@ -667,14 +495,6 @@ if (typeof ScrollReveal !== "undefined") {
       ".about__content",
       {
          origin: "left"
-      }
-   );
-
-
-   sr.reveal(
-      ".about__info",
-      {
-         origin: "right"
       }
    );
 
