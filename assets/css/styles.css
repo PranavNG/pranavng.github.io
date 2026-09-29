@@ -504,66 +504,23 @@ textarea {
 
 /*=============== ABOUT ===============*/
 .about__container {
-  align-items: center;
-
-  row-gap: 2.5rem;
-
-  column-gap: 4rem;
+  display: block;
 }
 
-.about__content .section__subtitle,
-.about__content .section__title {
+.about__content {
+  max-width: 1050px;
+  margin-inline: auto;
+}
+
+.about__content .section__subtitle {
   text-align: left;
 }
 
-.about__content .section__title {
-  margin-bottom: 2rem;
-}
-
 .about__description {
-  max-width: 800px;
-
+  max-width: none;
   margin-bottom: 1.25rem;
-
   line-height: 1.8;
 }
-
-.about__content .button {
-  margin-top: .75rem;
-}
-
-.about__info {
-  display: grid;
-
-  gap: 1rem;
-}
-
-.about__info-card {
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 1rem;
-
-  padding: 1.5rem;
-
-  border: 1px solid var(--border-color);
-
-  border-radius: .75rem;
-
-  background-color: var(--container-color);
-}
-
-.about__info-card i {
-  color: var(--first-color);
-
-  font-size: 1.5rem;
-}
-
-.about__info-card h3 {
-  margin-bottom: .3rem;
-}
-
 
 /*=============== SKILLS ===============*/
 .skills__container {
@@ -1236,11 +1193,6 @@ textarea {
 /*=============== MEDIUM / DESKTOP ===============*/
 @media screen and (min-width: 768px) {
 
-  .about__container {
-    grid-template-columns:
-      minmax(0, 1.15fr)
-      minmax(0, .85fr);
-  }
 
   .footer__container {
     flex-direction: row;
