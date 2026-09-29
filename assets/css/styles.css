@@ -135,8 +135,9 @@ textarea {
 }
 
 .section {
-  padding-block: 2.25rem 2.25rem;
-  scroll-margin-top: calc(var(--header-height) + .75rem);
+  min-height: 100vh;
+  padding-block: 2rem;
+  scroll-margin-top: var(--header-height);
 }
 
 .about,
