@@ -256,7 +256,6 @@ const projects = [
          "https://github.com/PranavNG/f1-data-platform"
    },
 
-
    {
       number: "03",
 
@@ -283,6 +282,35 @@ const projects = [
 
       github:
          "https://github.com/PranavNG/beer-portfolio-analytics"
+   },
+
+   {
+      number: "04",
+
+      shortTitle: "Loyalty Program Analytics",
+
+      title: "Customer Loyalty & Segmentation Analysis",
+
+      category: "Customer Analytics · Data Science",
+
+      status: "",
+
+      descriptions: [
+         "Analysed customer behaviour across a multi-merchant loyalty program to understand spending, engagement, retention and loyalty-point usage.",
+
+         "Used customer-level feature engineering, K-means clustering and statistical analysis to identify distinct customer segments and investigate how cross-merchant engagement relates to customer value and retention."
+      ],
+
+      tags: [
+         "R",
+         "Tidyverse",
+         "K-means",
+         "Customer Segmentation",
+         "Statistical Analysis"
+      ],
+
+      github:
+         "https://github.com/PranavNG/loyalty-program-customer-analysis"
    }
 
 ];
