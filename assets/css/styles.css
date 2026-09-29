@@ -74,7 +74,6 @@ body {
   overflow-x: hidden;
 
   background-color: var(--body-color);
-
   color: var(--text-color);
 
   font-family: var(--body-font);
@@ -132,7 +131,6 @@ textarea {
 }
 
 .section {
-  padding-block: 3.5rem;
   scroll-margin-top: var(--header-height);
 }
 
@@ -164,6 +162,30 @@ textarea {
 }
 
 .main {
+  width: 100%;
+}
+
+
+/*=============== FULL SCREEN SECTIONS ===============*/
+.about,
+.experience,
+.projects,
+.skills,
+.contact {
+  min-height: calc(100svh - var(--header-height));
+
+  display: flex;
+
+  align-items: center;
+
+  padding-block: 4rem;
+}
+
+.about>.container,
+.experience>.container,
+.projects>.container,
+.skills>.container,
+.contact>.container {
   width: 100%;
 }
 
@@ -256,9 +278,7 @@ textarea {
     background-color: var(--container-color);
 
     opacity: 0;
-
     visibility: hidden;
-
     pointer-events: none;
 
     transform: translateY(-1rem);
@@ -271,9 +291,7 @@ textarea {
 
   .nav__menu.show-menu {
     opacity: 1;
-
     visibility: visible;
-
     pointer-events: auto;
 
     transform: translateY(0);
@@ -323,9 +341,7 @@ textarea {
     height: auto;
 
     opacity: 1;
-
     visibility: visible;
-
     pointer-events: auto;
 
     transform: none;
@@ -351,12 +367,17 @@ textarea {
 
 /*=============== HOME ===============*/
 .home {
-  padding-top: calc(var(--header-height) + 2rem);
-  padding-bottom: 3rem;
+  min-height: 100svh;
+
+  display: flex;
+
+  align-items: center;
+
+  padding-top: var(--header-height);
 }
 
 .home__container {
-  min-height: calc(100vh - var(--header-height) - 5rem);
+  width: 100%;
 
   grid-template-columns: 1fr;
 
@@ -593,66 +614,6 @@ textarea {
 }
 
 
-/*=============== SKILLS ===============*/
-.skills__container {
-  grid-template-columns: 1fr;
-}
-
-.skills__card {
-  padding: 2rem;
-
-  border: 1px solid var(--border-color);
-
-  border-radius: .75rem;
-
-  background-color: var(--container-color);
-
-  transition: .2s ease;
-}
-
-.skills__card:hover {
-  border-color: var(--first-color);
-
-  transform: translateY(-4px);
-}
-
-.skills__icon {
-  display: inline-block;
-
-  margin-bottom: 1rem;
-
-  color: var(--first-color);
-
-  font-size: 2rem;
-}
-
-.skills__title {
-  margin-bottom: 1.25rem;
-}
-
-.skills__tags {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: .6rem;
-}
-
-.skills__tags span {
-  padding: .45rem .75rem;
-
-  border: 1px solid var(--border-color);
-
-  border-radius: 2rem;
-
-  background-color: var(--body-color);
-
-  color: var(--text-color);
-
-  font-size: var(--small-font-size);
-}
-
-
 /*=============== EXPERIENCE ===============*/
 .experience__container {
   width: 100%;
@@ -703,9 +664,17 @@ textarea {
 }
 
 .experience__company {
-  margin-bottom: 1rem;
+  margin-bottom: .35rem;
 
   color: var(--title-color);
+}
+
+.experience__date {
+  margin-bottom: 1.25rem;
+
+  color: var(--text-color);
+
+  font-size: var(--small-font-size);
 }
 
 .experience__description {
@@ -931,7 +900,7 @@ textarea {
 
 /*=============== MORE PROJECTS ===============*/
 .projects__more {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 
   text-align: center;
 }
@@ -958,6 +927,66 @@ textarea {
 
 .projects__more-link:hover {
   color: var(--title-color);
+}
+
+
+/*=============== SKILLS ===============*/
+.skills__container {
+  grid-template-columns: 1fr;
+}
+
+.skills__card {
+  padding: 2rem;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: .75rem;
+
+  background-color: var(--container-color);
+
+  transition: .2s ease;
+}
+
+.skills__card:hover {
+  border-color: var(--first-color);
+
+  transform: translateY(-4px);
+}
+
+.skills__icon {
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  color: var(--first-color);
+
+  font-size: 2rem;
+}
+
+.skills__title {
+  margin-bottom: 1.25rem;
+}
+
+.skills__tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: .6rem;
+}
+
+.skills__tags span {
+  padding: .45rem .75rem;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 2rem;
+
+  background-color: var(--body-color);
+
+  color: var(--text-color);
+
+  font-size: var(--small-font-size);
 }
 
 
@@ -1109,13 +1138,25 @@ textarea {
     padding-inline: 1rem;
   }
 
-  .section {
-    padding-block: 3rem;
+  .about,
+  .experience,
+  .projects,
+  .skills,
+  .contact {
+    min-height: auto;
+
+    display: block;
+
+    padding-block: 3.5rem;
   }
 
   .home {
-    padding-top: calc(var(--header-height) + 1.5rem);
-    padding-bottom: 2.5rem;
+    min-height: auto;
+
+    display: block;
+
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 3.5rem;
   }
 
   .home__container {
