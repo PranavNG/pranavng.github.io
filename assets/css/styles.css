@@ -104,9 +104,7 @@ a {
 img,
 svg {
   display: block;
-
   max-width: 100%;
-
   height: auto;
 }
 
@@ -130,22 +128,12 @@ textarea {
 
 .grid {
   display: grid;
-
   gap: 1.5rem;
 }
 
 .section {
-  min-height: 100vh;
-  padding-block: 2rem;
+  padding-block: 3.5rem;
   scroll-margin-top: var(--header-height);
-}
-
-.about,
-.experience,
-.projects,
-.skills,
-.contact {
-  min-height: calc(100vh - var(--header-height));
 }
 
 .section__subtitle,
@@ -363,12 +351,12 @@ textarea {
 
 /*=============== HOME ===============*/
 .home {
-  padding-top: calc(var(--header-height) + 1.5rem);
-  padding-bottom: 2rem;
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 3rem;
 }
 
 .home__container {
-  min-height: calc(100vh - var(--header-height) - 1.5rem);
+  min-height: calc(100vh - var(--header-height) - 5rem);
 
   grid-template-columns: 1fr;
 
@@ -1122,11 +1110,12 @@ textarea {
   }
 
   .section {
-    padding-block: 3.5rem 2.5rem;
+    padding-block: 3rem;
   }
 
   .home {
-    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 2.5rem;
   }
 
   .home__container {
