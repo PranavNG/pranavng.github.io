@@ -211,9 +211,8 @@ const projects = [
       status: "",
 
       descriptions: [
-         "A UNSW group project investigating species distribution using environmental and spatial predictors.",
-
-         "My contribution focused on exploratory data analysis and Regularised Logistic Regression, including model tuning, class balancing and cross-validation."
+         "Analysed presence–absence data for 8 reptile species across 641 NSW survey plots, exploring class imbalance and relationships between environmental and spatial predictors.",
+         "Built and tuned Regularised Logistic Regression models in Python using Scikit-learn, with class weighting, cross-validation and Optuna. The analysis compared single-species and joint-species modelling approaches to evaluate predictive performance across species."
       ],
 
       tags: [
@@ -241,7 +240,8 @@ const projects = [
       status: "In Progress",
 
       descriptions: [
-         "An end-to-end Formula 1 data platform for collecting, transforming, modelling and analysing racing data across seasons, races, drivers, teams and lap-level performance."
+         "Built an end-to-end Formula 1 data platform using Python, FastF1, SQL and Tableau, covering ingestion, transformation, modelling and analysis of multi-season race data.",
+         "Designed a SQL-based warehouse and custom performance metrics to support race, qualifying, driver and team analysis, including grid dependency, position changes, pace, reliability and consistency."
       ],
 
       tags: [
@@ -263,14 +263,13 @@ const projects = [
 
       title: "Beer Portfolio Analytics",
 
-      category: "Business Intelligence · Data Modelling",
+      category: "UNSW Academic Project · Data Science",
 
       status: "",
 
       descriptions: [
-         "A Power BI solution for analysing product portfolio performance across revenue, profitability, customers, channels, regions and individual products.",
-
-         "My primary contribution was designing the analytical data model and developing the final interactive dashboard."
+         "Built an interactive Power BI dashboard to analyse a national beer distribution dataset covering $4.31M in revenue, $1.81M in profit, 561K units sold, 150 SKUs and 3,352 customers.",
+         "My primary contribution was designing the analytical data model, building DAX measures and developing the final dashboard to explore performance across products, customer segments, regions, sales channels, ratings and discount levels."
       ],
 
       tags: [
@@ -291,14 +290,13 @@ const projects = [
 
       title: "Customer Loyalty & Segmentation Analysis",
 
-      category: "Customer Analytics · Data Science",
+      category: "UNSW Academic Project · Data Science",
 
       status: "",
 
       descriptions: [
-         "Analysed customer behaviour across a multi-merchant loyalty program to understand spending, engagement, retention and loyalty-point usage.",
-
-         "Used customer-level feature engineering, K-means clustering and statistical analysis to identify distinct customer segments and investigate how cross-merchant engagement relates to customer value and retention."
+         "Analysed transaction and loyalty data from 3,200+ customers across a multi-merchant loyalty program to understand spending, engagement, customer value and retention.",
+         "Used K-means clustering, logistic regression and statistical testing to identify customer segments and retention drivers. The analysis found stronger retention among multi-merchant customers, with retention increasing from 66.5% for single-merchant customers to 87.5% for customers using all three merchants."
       ],
 
       tags: [
