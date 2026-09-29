@@ -135,9 +135,16 @@ textarea {
 }
 
 .section {
-  padding-block: 4.25rem 3.25rem;
+  padding-block: 2.25rem 2.25rem;
+  scroll-margin-top: calc(var(--header-height) + .75rem);
+}
 
-  scroll-margin-top: calc(var(--header-height) + 1rem);
+.about,
+.experience,
+.projects,
+.skills,
+.contact {
+  min-height: calc(100vh - var(--header-height));
 }
 
 .section__subtitle,
@@ -355,11 +362,12 @@ textarea {
 
 /*=============== HOME ===============*/
 .home {
-  padding-top: calc(var(--header-height) + 4rem);
+  padding-top: calc(var(--header-height) + 1.5rem);
+  padding-bottom: 2rem;
 }
 
 .home__container {
-  min-height: calc(100vh - var(--header-height) - 2rem);
+  min-height: calc(100vh - var(--header-height) - 1.5rem);
 
   grid-template-columns: 1fr;
 
@@ -1175,8 +1183,7 @@ textarea {
 
   .home__container {
     grid-template-columns:
-      minmax(0, 1.2fr)
-      minmax(340px, .8fr);
+      minmax(0, 1.2fr) minmax(340px, .8fr);
 
     column-gap: clamp(3rem, 5vw, 6rem);
 
