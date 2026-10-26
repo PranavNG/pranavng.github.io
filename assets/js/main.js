@@ -210,9 +210,12 @@ const projects = [
 
       status: "",
 
+      image:
+         "assets/img/projects/species-distribution.png",
+
       descriptions: [
          "Analysed presence–absence data for 8 reptile species across 641 NSW survey plots, exploring class imbalance and relationships between environmental and spatial predictors.",
-         "Built and tuned Regularised Logistic Regression models in Python using Scikit-learn, with class weighting, cross-validation and Optuna. The analysis compared single-species and joint-species modelling approaches to evaluate predictive performance across species."
+         "Built and tuned Regularised Logistic Regression models in Python using Scikit-learn, class weighting, cross-validation and Optuna, comparing single-species and joint-species approaches across multiple evaluation metrics."
       ],
 
       tags: [
@@ -239,9 +242,12 @@ const projects = [
 
       status: "In Progress",
 
+      image:
+         "assets/img/projects/f1-data-platform.png",
+
       descriptions: [
          "Built an end-to-end Formula 1 data platform using Python, FastF1, SQL and Tableau, covering ingestion, transformation, modelling and analysis of multi-season race data.",
-         "Designed a SQL-based warehouse and custom performance metrics to support race, qualifying, driver and team analysis, including grid dependency, position changes, pace, reliability and consistency."
+         "Designed a SQL-based warehouse and custom performance metrics to analyse race, qualifying, driver and team performance, including grid dependency, position changes, pace, reliability and consistency."
       ],
 
       tags: [
@@ -256,6 +262,7 @@ const projects = [
          "https://github.com/PranavNG/f1-data-platform"
    },
 
+
    {
       number: "03",
 
@@ -267,9 +274,12 @@ const projects = [
 
       status: "",
 
+      image:
+         "assets/img/projects/beer-portfolio.png",
+
       descriptions: [
          "Built an interactive Power BI dashboard to analyse a national beer distribution dataset covering $4.31M in revenue, $1.81M in profit, 561K units sold, 150 SKUs and 3,352 customers.",
-         "My primary contribution was designing the analytical data model, building DAX measures and developing the final dashboard to explore performance across products, customer segments, regions, sales channels, ratings and discount levels."
+         "My primary contribution was designing the analytical data model, building DAX measures and developing the dashboard to analyse performance across products, customer segments, regions, sales channels, ratings and discount levels."
       ],
 
       tags: [
@@ -283,6 +293,7 @@ const projects = [
          "https://github.com/PranavNG/beer-portfolio-analytics"
    },
 
+
    {
       number: "04",
 
@@ -294,9 +305,12 @@ const projects = [
 
       status: "",
 
+      image:
+         "assets/img/projects/loyalty-program.png",
+
       descriptions: [
          "Analysed transaction and loyalty data from 3,200+ customers across a multi-merchant loyalty program to understand spending, engagement, customer value and retention.",
-         "Used K-means clustering, logistic regression and statistical testing to identify customer segments and retention drivers. The analysis found stronger retention among multi-merchant customers, with retention increasing from 66.5% for single-merchant customers to 87.5% for customers using all three merchants."
+         "Used K-means clustering, logistic regression and statistical testing to identify customer segments and retention drivers, finding retention increased from 66.5% for single-merchant customers to 87.5% for customers engaging with all three merchants."
       ],
 
       tags: [
@@ -320,6 +334,8 @@ const projectsSelector =
 const projectsDetail =
    document.getElementById("projects-detail");
 
+
+/*=============== PROJECT TABS ===============*/
 
 const createProjectTabs = () => {
    if (!projectsSelector) {
@@ -348,6 +364,8 @@ const createProjectTabs = () => {
       }).join("");
 };
 
+
+/*=============== PROJECT DETAIL ===============*/
 
 const showProject = index => {
    if (!projectsDetail) {
@@ -438,11 +456,25 @@ const showProject = index => {
 
          </div>
 
+
+         <div class="projects__visual">
+
+            <img
+               src="${project.image}"
+               alt="${project.title} project preview"
+               class="projects__image"
+               loading="lazy"
+            >
+
+         </div>
+
       </div>
 
    `;
 };
 
+
+/*=============== ACTIVE PROJECT ===============*/
 
 const setActiveProject = index => {
    const projectTabs =
@@ -471,10 +503,14 @@ const setActiveProject = index => {
 };
 
 
+/*=============== INITIAL PROJECT ===============*/
+
 createProjectTabs();
 
 showProject(0);
 
+
+/*=============== PROJECT CLICK HANDLER ===============*/
 
 if (projectsSelector) {
    projectsSelector.addEventListener(
