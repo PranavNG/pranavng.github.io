@@ -240,7 +240,7 @@ const projects = [
 
       category: "Data Engineering",
 
-      status: "In Progress",
+      status: "",
 
       image:
          "assets/img/projects/f1-data-platform.png",
@@ -299,7 +299,7 @@ const projects = [
 
       shortTitle: "Loyalty Program Analytics",
 
-      title: "Customer Loyalty & Segmentation Analysis",
+      title: "Customer Loyalty & Retention Analytics",
 
       category: "UNSW Academic Project · Data Science",
 
