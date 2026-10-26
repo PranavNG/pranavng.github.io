@@ -803,9 +803,9 @@ textarea {
 }
 
 .projects__detail-title {
-  font-size: var(--h1-font-size);
+  font-size: clamp(1.8rem, 2.3vw, 2.7rem);
 
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .projects__status {
