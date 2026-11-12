@@ -202,35 +202,32 @@ const projects = [
    {
       number: "01",
 
-      shortTitle: "Species Distribution",
+      shortTitle: "EqualPlay AI",
 
-      title: "Species Distribution Modelling",
+      title: "EqualPlay AI",
 
-      category: "UNSW Academic Project · Data Science",
+      category: "Applied AI · Backend Engineering",
 
       status: "",
 
-      image:
-         "assets/img/projects/species-distribution.png",
+      //image:"assets/img/projects/equalplay-ai.png",
 
       descriptions: [
-         "Analysed presence–absence data for 8 reptile species across 641 NSW survey plots, exploring class imbalance and relationships between environmental and spatial predictors.",
-         "Built and tuned Regularised Logistic Regression models in Python using Scikit-learn, class weighting, cross-validation and Optuna, comparing single-species and joint-species approaches across multiple evaluation metrics."
+         "Built an AI-powered football match intelligence platform that transforms structured match events and statistics into contextual, natural-language match narratives.",
+         "Engineered Python data pipelines for event validation, processing and aggregation, then integrated generative AI workflows with FastAPI REST endpoints to automate match summarisation and deliver accessible football insights."
       ],
 
       tags: [
          "Python",
-         "Pandas",
-         "Scikit-learn",
-         "Logistic Regression",
-         "Optuna"
+         "FastAPI",
+         "Azure AI",
+         "Generative AI",
+         "REST API"
       ],
 
       github:
-         "https://github.com/PranavNG/species-distribution-model"
+         "https://github.com/PranavNG/equalplay-ai"
    },
-
-
    {
       number: "02",
 
@@ -261,8 +258,6 @@ const projects = [
       github:
          "https://github.com/PranavNG/f1-data-platform"
    },
-
-
    {
       number: "03",
 
@@ -327,31 +322,32 @@ const projects = [
    {
       number: "05",
 
-      shortTitle: "EqualPlay AI",
+      shortTitle: "Species Distribution",
 
-      title: "EqualPlay AI",
+      title: "Species Distribution Modelling",
 
-      category: "Applied AI · Backend Engineering",
+      category: "UNSW Academic Project · Data Science",
 
       status: "",
 
-      //image:"assets/img/projects/equalplay-ai.png",
+      image:
+         "assets/img/projects/species-distribution.png",
 
       descriptions: [
-         "Built an AI-powered football match intelligence platform that transforms structured match events and statistics into contextual, natural-language match narratives.",
-         "Engineered Python data pipelines for event validation, processing and aggregation, then integrated generative AI workflows with FastAPI REST endpoints to automate match summarisation and deliver accessible football insights."
+         "Analysed presence–absence data for 8 reptile species across 641 NSW survey plots, exploring class imbalance and relationships between environmental and spatial predictors.",
+         "Built and tuned Regularised Logistic Regression models in Python using Scikit-learn, class weighting, cross-validation and Optuna, comparing single-species and joint-species approaches across multiple evaluation metrics."
       ],
 
       tags: [
          "Python",
-         "FastAPI",
-         "Azure AI",
-         "Generative AI",
-         "REST API"
+         "Pandas",
+         "Scikit-learn",
+         "Logistic Regression",
+         "Optuna"
       ],
 
       github:
-         "https://github.com/PranavNG/equalplay-ai"
+         "https://github.com/PranavNG/species-distribution-model"
    }
 
 ];
