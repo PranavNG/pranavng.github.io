@@ -323,6 +323,35 @@ const projects = [
 
       github:
          "https://github.com/PranavNG/loyalty-program-customer-analysis"
+   },
+   {
+      number: "05",
+
+      shortTitle: "EqualPlay AI",
+
+      title: "EqualPlay AI",
+
+      category: "Applied AI · Backend Engineering",
+
+      status: "",
+
+      //image:"assets/img/projects/equalplay-ai.png",
+
+      descriptions: [
+         "Built an AI-powered football match intelligence platform that transforms structured match events and statistics into contextual, natural-language match narratives.",
+         "Engineered Python data pipelines for event validation, processing and aggregation, then integrated generative AI workflows with FastAPI REST endpoints to automate match summarisation and deliver accessible football insights."
+      ],
+
+      tags: [
+         "Python",
+         "FastAPI",
+         "Azure AI",
+         "Generative AI",
+         "REST API"
+      ],
+
+      github:
+         "https://github.com/PranavNG/equalplay-ai"
    }
 
 ];
