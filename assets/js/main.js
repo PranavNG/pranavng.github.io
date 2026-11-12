@@ -210,7 +210,7 @@ const projects = [
 
       status: "",
 
-      //image:"assets/img/projects/equalplay-ai.png",
+      image: "assets/img/projects/equalplay-ai.png",
 
       descriptions: [
          "Built an AI-powered football match intelligence platform that transforms structured match events and statistics into contextual, natural-language match narratives.",
