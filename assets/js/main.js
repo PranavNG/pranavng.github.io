@@ -226,7 +226,10 @@ const projects = [
       ],
 
       github:
-         "https://github.com/PranavNG/equalplay-ai"
+         "https://github.com/PranavNG/equalplay-ai",
+      
+      live:
+      "https://pranavng.github.io/equalplay-ai/"
    },
    {
       number: "02",
@@ -476,6 +479,21 @@ const showProject = index => {
 
                   <i class="ri-arrow-right-up-line"></i>
                </a>
+               ${
+                  project.live
+                     ? `
+                        <a
+                           href="${project.live}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="projects__link"
+                        >
+                           Live Demo
+                           <i class="ri-arrow-right-up-line"></i>
+                        </a>
+                     `
+                     : ""
+               }
 
             </div>
 
