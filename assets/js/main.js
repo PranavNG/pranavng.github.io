@@ -3,7 +3,7 @@ const navMenu = document.getElementById("nav-menu");
 const navToggle = document.getElementById("nav-toggle");
 const navClose = document.getElementById("nav-close");
 
-const navLinks = document.querySelectorAll(".nav__link");
+const navLinks = document.querySelectorAll(".nav_link");
 
 const header = document.getElementById("header");
 
@@ -46,7 +46,6 @@ if (navClose) {
 }
 
 
-/* Close mobile menu after selecting navigation item */
 navLinks.forEach(link => {
    link.addEventListener("click", () => {
       closeMenu();
@@ -59,19 +58,11 @@ navLinks.forEach(link => {
    });
 });
 
-
-/*
-   If the user changes from mobile to desktop
-   while the menu is open, reset the mobile menu.
-*/
 window.addEventListener("resize", () => {
    if (window.innerWidth >= 768) {
       closeMenu();
    }
 });
-
-
-/*=============== HEADER BACKGROUND ===============*/
 
 const updateHeader = () => {
    if (!header) {
@@ -85,9 +76,6 @@ const updateHeader = () => {
    }
 };
 
-
-/*=============== SCROLL UP BUTTON ===============*/
-
 const updateScrollUp = () => {
    if (!scrollUpButton) {
       return;
@@ -99,9 +87,6 @@ const updateScrollUp = () => {
       scrollUpButton.classList.remove("show-scroll");
    }
 };
-
-
-/*=============== ACTIVE NAV LINK ===============*/
 
 const updateActiveLink = () => {
    if (!sections.length) {
@@ -161,9 +146,6 @@ const updateActiveLink = () => {
    });
 };
 
-
-/*=============== MAIN SCROLL HANDLER ===============*/
-
 const handleScroll = () => {
    updateHeader();
    updateScrollUp();
@@ -179,23 +161,16 @@ window.addEventListener(
    }
 );
 
-
-/* Run immediately after page loads */
 window.addEventListener(
    "load",
    handleScroll
 );
 
 
-/*=============== FOOTER YEAR ===============*/
-
 if (footerYear) {
    footerYear.textContent =
       new Date().getFullYear();
 }
-
-
-/*=============== PROJECTS ===============*/
 
 const projects = [
 
@@ -227,9 +202,9 @@ const projects = [
 
       github:
          "https://github.com/PranavNG/equalplay-ai",
-      
+
       live:
-      "https://pranavng.github.io/equalplay-ai/"
+         "https://pranavng.github.io/equalplay-ai/"
    },
    {
       number: "02",
@@ -362,9 +337,6 @@ const projectsSelector =
 const projectsDetail =
    document.getElementById("projects-detail");
 
-
-/*=============== PROJECT TABS ===============*/
-
 const createProjectTabs = () => {
    if (!projectsSelector) {
       return;
@@ -374,26 +346,23 @@ const createProjectTabs = () => {
       projects.map((project, index) => {
          return `
             <button
-               class="projects__tab ${index === 0 ? "active-project" : ""}"
+               class="projects_tab ${index === 0 ? "active-project" : ""}"
                type="button"
                data-project="${index}"
                role="tab"
                aria-selected="${index === 0}"
             >
-               <span class="projects__tab-number">
+               <span class="projects_tab-number">
                   ${project.number}
                </span>
 
-               <span class="projects__tab-title">
+               <span class="projects_tab-title">
                   ${project.shortTitle}
                </span>
             </button>
          `;
       }).join("");
 };
-
-
-/*=============== PROJECT DETAIL ===============*/
 
 const showProject = index => {
    if (!projectsDetail) {
@@ -410,7 +379,7 @@ const showProject = index => {
    const statusHTML =
       project.status
          ? `
-            <span class="projects__status">
+            <span class="projects_status">
                ${project.status}
             </span>
          `
@@ -420,7 +389,7 @@ const showProject = index => {
    const descriptionsHTML =
       project.descriptions.map(description => {
          return `
-            <p class="projects__description">
+            <p class="projects_description">
                ${description}
             </p>
          `;
@@ -435,22 +404,22 @@ const showProject = index => {
 
    projectsDetail.innerHTML = `
 
-      <div class="projects__detail-grid">
+      <div class="projects_detail-grid">
 
-         <div class="projects__detail-content">
+         <div class="projects_detail-content">
 
-            <p class="projects__category">
+            <p class="projects_category">
                ${project.category}
             </p>
 
 
-            <div class="projects__heading">
+            <div class="projects_heading">
 
-               <span class="projects__detail-number">
+               <span class="projects_detail-number">
                   ${project.number}
                </span>
 
-               <h3 class="projects__detail-title">
+               <h3 class="projects_detail-title">
                   ${project.title}
                </h3>
 
@@ -462,50 +431,49 @@ const showProject = index => {
             ${descriptionsHTML}
 
 
-            <div class="projects__tags">
+            <div class="projects_tags">
                ${tagsHTML}
             </div>
 
 
-            <div class="projects__links">
+            <div class="projects_links">
 
                <a
                   href="${project.github}"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="projects__link"
+                  class="projects_link"
                >
                   GitHub
 
                   <i class="ri-arrow-right-up-line"></i>
                </a>
-               ${
-                  project.live
-                     ? `
+               ${project.live
+         ? `
                         <a
                            href="${project.live}"
                            target="_blank"
                            rel="noopener noreferrer"
-                           class="projects__link"
+                           class="projects_link"
                         >
                            Live Demo
                            <i class="ri-arrow-right-up-line"></i>
                         </a>
                      `
-                     : ""
-               }
+         : ""
+      }
 
             </div>
 
          </div>
 
 
-         <div class="projects__visual">
+         <div class="projects_visual">
 
             <img
                src="${project.image}"
                alt="${project.title} project preview"
-               class="projects__image"
+               class="projects_image"
                loading="lazy"
             >
 
@@ -516,12 +484,9 @@ const showProject = index => {
    `;
 };
 
-
-/*=============== ACTIVE PROJECT ===============*/
-
 const setActiveProject = index => {
    const projectTabs =
-      document.querySelectorAll(".projects__tab");
+      document.querySelectorAll(".projects_tab");
 
 
    projectTabs.forEach((tab, tabIndex) => {
@@ -545,22 +510,16 @@ const setActiveProject = index => {
    showProject(index);
 };
 
-
-/*=============== INITIAL PROJECT ===============*/
-
 createProjectTabs();
 
 showProject(0);
-
-
-/*=============== PROJECT CLICK HANDLER ===============*/
 
 if (projectsSelector) {
    projectsSelector.addEventListener(
       "click",
       event => {
          const tab =
-            event.target.closest(".projects__tab");
+            event.target.closest(".projects_tab");
 
 
          if (!tab) {
@@ -577,9 +536,6 @@ if (projectsSelector) {
    );
 }
 
-
-/*=============== SCROLL REVEAL ===============*/
-
 if (typeof ScrollReveal !== "undefined") {
 
    const sr = ScrollReveal({
@@ -592,12 +548,12 @@ if (typeof ScrollReveal !== "undefined") {
 
 
    sr.reveal(
-      ".home__content, .home__capabilities, .section__subtitle, .section__title"
+      ".home_content, .home_capabilities, .section_subtitle, .section_title"
    );
 
 
    sr.reveal(
-      ".about__content",
+      ".about_content",
       {
          origin: "left"
       }
@@ -605,7 +561,7 @@ if (typeof ScrollReveal !== "undefined") {
 
 
    sr.reveal(
-      ".skills__card, .projects__shell",
+      ".skills_card, .projects_shell",
       {
          interval: 100
       }
@@ -613,7 +569,7 @@ if (typeof ScrollReveal !== "undefined") {
 
 
    sr.reveal(
-      ".experience__item, .contact__container",
+      ".experience_item, .contact_container",
       {
          origin: "bottom"
       }

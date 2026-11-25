@@ -141,8 +141,8 @@ textarea {
   scroll-margin-top: var(--header-height);
 }
 
-.section__subtitle,
-.section__title {
+.section_subtitle,
+.section_title {
   text-align: center;
 
   color: var(--title-color);
@@ -150,7 +150,7 @@ textarea {
   font-weight: var(--font-semi-bold);
 }
 
-.section__subtitle {
+.section_subtitle {
   display: block;
 
   margin-bottom: .5rem;
@@ -158,11 +158,11 @@ textarea {
   font-size: var(--small-font-size);
 }
 
-.section__subtitle span {
+.section_subtitle span {
   color: var(--first-color);
 }
 
-.section__title {
+.section_title {
   margin-bottom: 3rem;
 
   font-size: var(--h1-font-size);
@@ -232,7 +232,7 @@ textarea {
   justify-content: space-between;
 }
 
-.nav__logo {
+.nav_logo {
   color: var(--title-color);
 
   font-size: 1.1rem;
@@ -240,11 +240,11 @@ textarea {
   font-weight: var(--font-semi-bold);
 }
 
-.nav__logo span {
+.nav_logo span {
   color: var(--first-color);
 }
 
-.nav__link {
+.nav_link {
   color: var(--title-color);
 
   font-weight: var(--font-medium);
@@ -252,13 +252,13 @@ textarea {
   transition: color .2s ease;
 }
 
-.nav__link:hover,
+.nav_link:hover,
 .active-link {
   color: var(--first-color);
 }
 
-.nav__toggle,
-.nav__close {
+.nav_toggle,
+.nav_close {
   color: var(--title-color);
 
   font-size: 1.5rem;
@@ -270,7 +270,7 @@ textarea {
 /*=============== MOBILE NAV ===============*/
 @media screen and (max-width: 767px) {
 
-  .nav__menu {
+  .nav_menu {
     position: fixed;
 
     inset: 0;
@@ -296,7 +296,7 @@ textarea {
       transform .2s ease;
   }
 
-  .nav__menu.show-menu {
+  .nav_menu.show-menu {
     opacity: 1;
     visibility: visible;
 
@@ -305,7 +305,7 @@ textarea {
     transform: translateY(0);
   }
 
-  .nav__list {
+  .nav_list {
     display: flex;
 
     flex-direction: column;
@@ -317,11 +317,11 @@ textarea {
     text-align: center;
   }
 
-  .nav__link {
+  .nav_link {
     font-size: 1.25rem;
   }
 
-  .nav__close {
+  .nav_close {
     position: absolute;
 
     top: 1.25rem;
@@ -330,7 +330,7 @@ textarea {
     font-size: 1.8rem;
   }
 
-  .nav__toggle {
+  .nav_toggle {
     display: block;
   }
 
@@ -340,7 +340,7 @@ textarea {
 /*=============== DESKTOP NAV ===============*/
 @media screen and (min-width: 768px) {
 
-  .nav__menu {
+  .nav_menu {
     position: static;
 
     display: block;
@@ -357,7 +357,7 @@ textarea {
     background-color: transparent;
   }
 
-  .nav__list {
+  .nav_list {
     display: flex;
 
     align-items: center;
@@ -365,8 +365,8 @@ textarea {
     gap: clamp(1.4rem, 2.3vw, 2.5rem);
   }
 
-  .nav__toggle,
-  .nav__close {
+  .nav_toggle,
+  .nav_close {
     display: none;
   }
 
@@ -385,7 +385,7 @@ textarea {
   padding-top: var(--header-height);
 }
 
-.home__container {
+.home_container {
   width: 100%;
 
   display: flex;
@@ -394,7 +394,7 @@ textarea {
   justify-content: center;
 }
 
-.home__content {
+.home_content {
   width: 100%;
 
   max-width: 900px;
@@ -404,7 +404,7 @@ textarea {
   text-align: center;
 }
 
-.home__subtitle {
+.home_subtitle {
   margin-bottom: .75rem;
 
   color: var(--title-color);
@@ -416,12 +416,12 @@ textarea {
   text-transform: uppercase;
 }
 
-.home__subtitle span,
-.home__title span {
+.home_subtitle span,
+.home_title span {
   color: var(--first-color);
 }
 
-.home__title {
+.home_title {
   margin-bottom: 1rem;
 
   font-size: var(--biggest-font-size);
@@ -429,7 +429,7 @@ textarea {
   line-height: 1.1;
 }
 
-.home__headline {
+.home_headline {
   max-width: 900px;
 
   margin-inline: auto;
@@ -441,7 +441,7 @@ textarea {
   line-height: 1.35;
 }
 
-.home__description {
+.home_description {
   max-width: 760px;
 
   margin-inline: auto;
@@ -451,7 +451,7 @@ textarea {
   line-height: 1.8;
 }
 
-.home__buttons {
+.home_buttons {
   display: flex;
 
   align-items: center;
@@ -464,7 +464,7 @@ textarea {
   margin-bottom: 2rem;
 }
 
-.home__social {
+.home_social {
   display: flex;
 
   align-items: center;
@@ -473,7 +473,7 @@ textarea {
   gap: 1rem;
 }
 
-.home__social-link {
+.home_social-link {
   display: inline-flex;
 
   align-items: center;
@@ -493,7 +493,7 @@ textarea {
   transition: .2s ease;
 }
 
-.home__social-link:hover {
+.home_social-link:hover {
   border-color: var(--first-color);
 
   background-color: var(--first-color);
@@ -548,11 +548,11 @@ textarea {
 
 
 /*=============== ABOUT ===============*/
-.about__container {
+.about_container {
   display: block;
 }
 
-.about__content {
+.about_content {
   width: 100%;
 
   max-width: 1100px;
@@ -560,12 +560,12 @@ textarea {
   margin-inline: auto;
 }
 
-.about__content .section__subtitle,
-.about__content .section__title {
+.about_content .section_subtitle,
+.about_content .section_title {
   text-align: left;
 }
 
-.about__description {
+.about_description {
   max-width: none;
 
   margin-bottom: 1.25rem;
@@ -573,17 +573,17 @@ textarea {
   line-height: 1.8;
 }
 
-.about__content .button {
+.about_content .button {
   margin-top: .75rem;
 }
 
 
 /*=============== EXPERIENCE ===============*/
-.experience__container {
+.experience_container {
   width: 100%;
 }
 
-.experience__item {
+.experience_item {
   position: relative;
 
   max-width: 950px;
@@ -595,7 +595,7 @@ textarea {
   border-left: 2px solid var(--border-color);
 }
 
-.experience__marker {
+.experience_marker {
   position: absolute;
 
   top: .3rem;
@@ -609,7 +609,7 @@ textarea {
   background-color: var(--first-color);
 }
 
-.experience__type {
+.experience_type {
   margin-bottom: .4rem;
 
   color: var(--first-color);
@@ -621,19 +621,19 @@ textarea {
   text-transform: uppercase;
 }
 
-.experience__title {
+.experience_title {
   margin-bottom: .25rem;
 
   font-size: var(--h2-font-size);
 }
 
-.experience__company {
+.experience_company {
   margin-bottom: .35rem;
 
   color: var(--title-color);
 }
 
-.experience__date {
+.experience_date {
   margin-bottom: 1.25rem;
 
   color: var(--text-color);
@@ -641,7 +641,7 @@ textarea {
   font-size: var(--small-font-size);
 }
 
-.experience__description {
+.experience_description {
   max-width: 850px;
 
   margin-bottom: 1rem;
@@ -651,7 +651,7 @@ textarea {
 
 
 /*=============== PROJECTS ===============*/
-.projects__shell {
+.projects_shell {
   overflow: hidden;
 
   border: 1px solid var(--border-color);
@@ -663,7 +663,7 @@ textarea {
 
 
 /*=============== PROJECT SELECTOR ===============*/
-.projects__selector {
+.projects_selector {
   display: flex;
 
   flex-wrap: wrap;
@@ -675,7 +675,7 @@ textarea {
   border-bottom: 1px solid var(--border-color);
 }
 
-.projects__tab {
+.projects_tab {
   display: inline-flex;
 
   align-items: center;
@@ -699,19 +699,19 @@ textarea {
     color .2s ease;
 }
 
-.projects__tab:hover {
+.projects_tab:hover {
   background-color: var(--body-color);
 
   color: var(--title-color);
 }
 
-.projects__tab.active-project {
+.projects_tab.active-project {
   background-color: hsla(var(--hue), 100%, 40%, .10);
 
   color: var(--title-color);
 }
 
-.projects__tab-number {
+.projects_tab-number {
   color: var(--first-color);
 
   font-size: var(--small-font-size);
@@ -719,17 +719,17 @@ textarea {
   font-weight: var(--font-semi-bold);
 }
 
-.projects__tab-title {
+.projects_tab-title {
   font-weight: var(--font-medium);
 }
 
 
 /*=============== PROJECT DETAIL ===============*/
-.projects__detail {
+.projects_detail {
   padding: clamp(1.5rem, 3vw, 2.75rem);
 }
 
-.projects__detail-grid {
+.projects_detail-grid {
   display: grid;
 
   grid-template-columns:
@@ -740,13 +740,13 @@ textarea {
   align-items: center;
 }
 
-.projects__detail-content {
+.projects_detail-content {
   width: 100%;
 
   max-width: 850px;
 }
 
-.projects__heading {
+.projects_heading {
   display: flex;
 
   align-items: center;
@@ -758,7 +758,7 @@ textarea {
   margin-bottom: 1.5rem;
 }
 
-.projects__detail-number {
+.projects_detail-number {
   color: var(--first-color);
 
   font-size: var(--small-font-size);
@@ -766,13 +766,13 @@ textarea {
   font-weight: var(--font-semi-bold);
 }
 
-.projects__detail-title {
+.projects_detail-title {
   font-size: clamp(1.8rem, 2.3vw, 2.7rem);
 
   line-height: 1.2;
 }
 
-.projects__status {
+.projects_status {
   display: inline-flex;
 
   align-items: center;
@@ -790,7 +790,7 @@ textarea {
   font-size: var(--smaller-font-size);
 }
 
-.projects__category {
+.projects_category {
   margin-bottom: .75rem;
 
   color: var(--first-color);
@@ -802,7 +802,7 @@ textarea {
   letter-spacing: .05rem;
 }
 
-.projects__description {
+.projects_description {
   max-width: 800px;
 
   margin-bottom: 1rem;
@@ -810,7 +810,7 @@ textarea {
   line-height: 1.75;
 }
 
-.projects__tags {
+.projects_tags {
   display: flex;
 
   flex-wrap: wrap;
@@ -820,7 +820,7 @@ textarea {
   margin-top: 1.5rem;
 }
 
-.projects__tags span {
+.projects_tags span {
   padding: .45rem .75rem;
 
   border: 1px solid var(--border-color);
@@ -834,7 +834,7 @@ textarea {
   font-size: var(--small-font-size);
 }
 
-.projects__links {
+.projects_links {
   display: flex;
 
   flex-wrap: wrap;
@@ -848,7 +848,7 @@ textarea {
   border-top: 1px solid var(--border-color);
 }
 
-.projects__link {
+.projects_link {
   display: inline-flex;
 
   align-items: center;
@@ -862,13 +862,13 @@ textarea {
   transition: color .2s ease;
 }
 
-.projects__link:hover {
+.projects_link:hover {
   color: var(--first-color);
 }
 
 
 /*=============== PROJECT IMAGE ===============*/
-.projects__visual {
+.projects_visual {
   width: 100%;
 
   aspect-ratio: 16 / 10;
@@ -889,7 +889,7 @@ textarea {
   box-shadow: 0 14px 35px hsla(0, 0%, 0%, .18);
 }
 
-.projects__image {
+.projects_image {
   width: 100%;
   height: 100%;
 
@@ -900,25 +900,25 @@ textarea {
   transition: transform .3s ease;
 }
 
-.projects__visual:hover .projects__image {
+.projects_visual:hover .projects_image {
   transform: scale(1.015);
 }
 
 
 /*=============== MORE PROJECTS ===============*/
-.projects__more {
+.projects_more {
   margin-top: 2rem;
 
   text-align: center;
 }
 
-.projects__more p {
+.projects_more p {
   margin-bottom: .5rem;
 
   color: var(--text-color);
 }
 
-.projects__more-link {
+.projects_more-link {
   display: inline-flex;
 
   align-items: center;
@@ -932,17 +932,17 @@ textarea {
   transition: color .2s ease;
 }
 
-.projects__more-link:hover {
+.projects_more-link:hover {
   color: var(--title-color);
 }
 
 
 /*=============== SKILLS ===============*/
-.skills__container {
+.skills_container {
   grid-template-columns: 1fr;
 }
 
-.skills__card {
+.skills_card {
   height: 100%;
 
   padding: 2rem;
@@ -958,13 +958,13 @@ textarea {
     transform .2s ease;
 }
 
-.skills__card:hover {
+.skills_card:hover {
   border-color: var(--first-color);
 
   transform: translateY(-4px);
 }
 
-.skills__icon {
+.skills_icon {
   display: inline-block;
 
   margin-bottom: 1rem;
@@ -974,13 +974,13 @@ textarea {
   font-size: 2rem;
 }
 
-.skills__title {
+.skills_title {
   margin-bottom: 1.25rem;
 
   font-size: var(--h3-font-size);
 }
 
-.skills__tags {
+.skills_tags {
   display: flex;
 
   flex-wrap: wrap;
@@ -988,7 +988,7 @@ textarea {
   gap: .6rem;
 }
 
-.skills__tags span {
+.skills_tags span {
   padding: .45rem .75rem;
 
   border: 1px solid var(--border-color);
@@ -1004,11 +1004,11 @@ textarea {
 
 
 /*=============== CONTACT ===============*/
-.contact__container {
+.contact_container {
   text-align: center;
 }
 
-.contact__title {
+.contact_title {
   margin-bottom: 1rem;
 
   color: var(--title-color);
@@ -1016,7 +1016,7 @@ textarea {
   font-size: var(--biggest-font-size);
 }
 
-.contact__description {
+.contact_description {
   max-width: 650px;
 
   margin-inline: auto;
@@ -1026,7 +1026,7 @@ textarea {
   line-height: 1.8;
 }
 
-.contact__buttons {
+.contact_buttons {
   display: flex;
 
   justify-content: center;
@@ -1044,7 +1044,7 @@ textarea {
   background-color: var(--container-color);
 }
 
-.footer__container {
+.footer_container {
   display: flex;
 
   flex-direction: column;
@@ -1056,7 +1056,7 @@ textarea {
   text-align: center;
 }
 
-.footer__logo {
+.footer_logo {
   color: var(--title-color);
 
   font-size: 1.1rem;
@@ -1064,17 +1064,17 @@ textarea {
   font-weight: var(--font-semi-bold);
 }
 
-.footer__logo span {
+.footer_logo span {
   color: var(--first-color);
 }
 
-.footer__social {
+.footer_social {
   display: flex;
 
   gap: 1rem;
 }
 
-.footer__social-link {
+.footer_social-link {
   color: var(--title-color);
 
   font-size: 1.25rem;
@@ -1082,11 +1082,11 @@ textarea {
   transition: color .2s ease;
 }
 
-.footer__social-link:hover {
+.footer_social-link:hover {
   color: var(--first-color);
 }
 
-.footer__copy {
+.footer_copy {
   font-size: var(--small-font-size);
 }
 
@@ -1147,13 +1147,13 @@ textarea {
 /*=============== PROJECT RESPONSIVE ===============*/
 @media screen and (max-width: 900px) {
 
-  .projects__detail-grid {
+  .projects_detail-grid {
     grid-template-columns: 1fr;
 
     gap: 2rem;
   }
 
-  .projects__visual {
+  .projects_visual {
     order: -1;
 
     max-width: 750px;
@@ -1190,22 +1190,22 @@ textarea {
     padding-bottom: 2rem;
   }
 
-  .home__container {
+  .home_container {
     min-height: auto;
   }
 
-  .home__content {
+  .home_content {
     max-width: 100%;
   }
 
-  .home__buttons,
-  .contact__buttons {
+  .home_buttons,
+  .contact_buttons {
     flex-direction: column;
 
     align-items: stretch;
   }
 
-  .home__buttons {
+  .home_buttons {
     max-width: 320px;
 
     margin-inline: auto;
@@ -1213,37 +1213,37 @@ textarea {
     margin-bottom: 2rem;
   }
 
-  .projects__selector {
+  .projects_selector {
     flex-direction: column;
 
     align-items: stretch;
   }
 
-  .projects__tab {
+  .projects_tab {
     width: 100%;
   }
 
-  .projects__detail {
+  .projects_detail {
     padding: 1.25rem;
   }
 
-  .projects__visual {
+  .projects_visual {
     aspect-ratio: 16 / 10;
 
     border-radius: .6rem;
   }
 
-  .projects__heading {
+  .projects_heading {
     gap: .65rem;
 
     margin-bottom: 1.25rem;
   }
 
-  .projects__description {
+  .projects_description {
     line-height: 1.7;
   }
 
-  .skills__card {
+  .skills_card {
     padding: 1.5rem;
   }
 
@@ -1253,7 +1253,7 @@ textarea {
 /*=============== TABLET ===============*/
 @media screen and (min-width: 576px) {
 
-  .skills__container {
+  .skills_container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1263,7 +1263,7 @@ textarea {
 /*=============== MEDIUM / DESKTOP ===============*/
 @media screen and (min-width: 768px) {
 
-  .footer__container {
+  .footer_container {
     flex-direction: row;
 
     justify-content: space-between;
@@ -1275,7 +1275,7 @@ textarea {
 /*=============== LARGE DESKTOP ===============*/
 @media screen and (min-width: 1200px) {
 
-  .skills__container {
+  .skills_container {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
